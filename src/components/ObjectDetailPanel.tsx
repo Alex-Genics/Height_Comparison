@@ -33,17 +33,17 @@ export const ObjectDetailPanel: React.FC<ObjectDetailPanelProps> = ({
 
   return (
     <div
-      className={`bg-[#090d16]/90 backdrop-blur-xl border border-white/10 rounded-xl p-5 md:p-6 shadow-2xl transition-all duration-300 max-w-lg ${className}`}
+      className={`bg-[#090d16]/90 backdrop-blur-xl border border-white/10 rounded-xl p-3.5 sm:p-4 md:p-4.5 shadow-2xl transition-all duration-300 max-w-md ${className}`}
       role="region"
       aria-label={`Details for ${item.name}`}
     >
       {/* Editorial Chapter Header */}
-      <div className="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
-        <div className="flex items-center gap-2">
-          <span className="text-xs font-mono font-semibold text-cyan-400">
+      <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
+        <div className="flex items-center gap-1.5">
+          <span className="text-[11px] font-mono font-semibold text-cyan-400">
             {String(itemIndex + 1).padStart(2, '0')}.
           </span>
-          <span className="text-xs font-mono uppercase tracking-widest text-slate-400">
+          <span className="text-[10px] font-mono uppercase tracking-widest text-slate-400">
             {item.category}
           </span>
         </div>
@@ -57,9 +57,9 @@ export const ObjectDetailPanel: React.FC<ObjectDetailPanelProps> = ({
             aria-label="Previous comparison"
             title="Previous comparison"
           >
-            <ChevronLeft className="w-4 h-4" />
+            <ChevronLeft className="w-3.5 h-3.5" />
           </button>
-          <span className="text-[11px] font-mono text-slate-500 tabular-nums px-1">
+          <span className="text-[10px] font-mono text-slate-500 tabular-nums px-1">
             {itemIndex + 1}/{totalItems}
           </span>
           <button
@@ -69,81 +69,81 @@ export const ObjectDetailPanel: React.FC<ObjectDetailPanelProps> = ({
             aria-label="Next comparison"
             title="Next comparison"
           >
-            <ChevronRight className="w-4 h-4" />
+            <ChevronRight className="w-3.5 h-3.5" />
           </button>
         </div>
       </div>
 
       {/* Main Title & Native Subtitle */}
-      <div className="mb-4">
-        <h2 className="text-2xl sm:text-3xl font-display font-extrabold tracking-tight text-white leading-tight">
+      <div className="mb-2.5">
+        <h2 className="text-xl sm:text-2xl font-display font-extrabold tracking-tight text-white leading-tight">
           {item.name}
         </h2>
         {item.nativeName && (
-          <p className="text-xs font-mono text-slate-400 mt-0.5">
+          <p className="text-[11px] font-mono text-slate-400 mt-0.5">
             {item.nativeName}
           </p>
         )}
       </div>
 
       {/* Large Numeric Height Readout & Calculated Human Scale Ratio */}
-      <div className="grid grid-cols-2 gap-3 py-3 px-4 rounded-lg bg-white/5 border border-white/5 mb-4">
+      <div className="grid grid-cols-2 gap-2.5 py-2.5 px-3 rounded-lg bg-white/5 border border-white/5 mb-2.5">
         <div>
-          <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-0.5">
+          <span className="block text-[9px] font-mono uppercase tracking-wider text-slate-400 mb-0.5">
             Total Height / Elevation
           </span>
-          <div className="text-2xl sm:text-3xl font-mono font-extrabold text-cyan-300 tracking-tight tabular-nums">
+          <div className="text-xl sm:text-2xl font-mono font-extrabold text-cyan-300 tracking-tight tabular-nums">
             {formattedPrimary}
           </div>
-          <div className="text-[11px] font-mono text-slate-400 tabular-nums">
+          <div className="text-[10px] font-mono text-slate-400 tabular-nums">
             ≈ {formattedSecondary}
           </div>
         </div>
 
-        <div className="border-l border-white/10 pl-4">
-          <span className="block text-[10px] font-mono uppercase tracking-wider text-slate-400 mb-0.5">
+        <div className="border-l border-white/10 pl-3">
+          <span className="block text-[9px] font-mono uppercase tracking-wider text-slate-400 mb-0.5">
             Scale vs Human (1.70m)
           </span>
-          <div className="text-2xl sm:text-3xl font-mono font-extrabold text-amber-300 tracking-tight tabular-nums">
+          <div className="text-xl sm:text-2xl font-mono font-extrabold text-amber-300 tracking-tight tabular-nums">
             ≈ {ratio}
           </div>
-          <div className="text-[11px] font-mono text-slate-400">
+          <div className="text-[10px] font-mono text-slate-400">
             the height of an adult human
           </div>
         </div>
       </div>
 
       {/* Description */}
-      <p className="text-sm text-slate-200 leading-relaxed mb-4">
+      <p className="text-xs sm:text-sm text-slate-200 leading-relaxed mb-2.5">
         {item.description}
       </p>
 
-      {/* Measurement Definition Callout (Distinguishing antenna, pedestal, shoulder, sea level) */}
-      <div className="text-xs text-slate-300 bg-cyan-950/30 border border-cyan-800/40 rounded-lg p-3 mb-4 space-y-1">
-        <div className="flex items-center gap-1.5 text-cyan-300 font-mono font-semibold text-[11px]">
-          <Info className="w-3.5 h-3.5 shrink-0" />
+      {/* Measurement Definition Callout */}
+      <div className="text-xs text-slate-300 bg-cyan-950/30 border border-cyan-800/40 rounded-lg p-2.5 mb-2.5 space-y-1">
+        <div className="flex items-center gap-1 text-cyan-300 font-mono font-semibold text-[10px]">
+          <Info className="w-3 h-3 shrink-0" />
           <span>MEASUREMENT DEFINITION:</span>
         </div>
-        <p className="text-[11px] text-slate-300 leading-normal">
+        <p className="text-[10px] text-slate-300 leading-normal">
           {item.heightDefinition}
         </p>
       </div>
 
       {/* Location & Featured Fact */}
-      <div className="space-y-2 mb-4 text-xs font-mono text-slate-400 border-t border-white/5 pt-3">
-        <div className="flex items-start gap-1.5">
-          <Compass className="w-3.5 h-3.5 text-slate-500 shrink-0 mt-0.5" />
+      <div className="space-y-1.5 mb-2.5 text-[11px] font-mono text-slate-400 border-t border-white/5 pt-2">
+        <div className="flex items-start gap-1">
+          <Compass className="w-3 h-3 text-slate-500 shrink-0 mt-0.5" />
           <span>{item.location}</span>
         </div>
         {item.featuredFact && (
-          <p className="text-[11px] text-slate-300/80 italic font-sans leading-relaxed">
+          <p className="text-[10px] text-slate-300/80 italic font-sans leading-relaxed">
             "{item.featuredFact}"
           </p>
         )}
       </div>
 
       {/* Source Citation */}
-      <div className="flex items-center justify-between text-[11px] font-mono text-slate-500 border-t border-white/10 pt-3">
+      <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 border-t border-white/10 pt-2">
         <span className="truncate pr-2">
           Source: <span className="text-slate-400">{item.sourceName}</span>
         </span>
@@ -155,7 +155,7 @@ export const ObjectDetailPanel: React.FC<ObjectDetailPanelProps> = ({
           title={`View official citation: ${item.sourceName}`}
         >
           <span>Verify</span>
-          <ExternalLink className="w-3 h-3" />
+          <ExternalLink className="w-2.5 h-2.5" />
         </a>
       </div>
     </div>

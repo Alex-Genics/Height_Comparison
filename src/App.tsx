@@ -163,7 +163,7 @@ export default function App() {
       />
 
       {/* Main Viewport Content */}
-      <main className="flex-1 w-full pt-16 flex flex-col justify-center">
+      <main className="flex-1 w-full pt-12 flex flex-col justify-center">
         {!hasStarted ? (
           <HeroSection
             unit={unit}

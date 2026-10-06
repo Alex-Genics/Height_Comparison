@@ -22,29 +22,29 @@ export const ScaleRuler: React.FC<ScaleRulerProps> = ({
 
   return (
     <div
-      className={`fixed top-20 right-4 sm:right-8 z-40 pointer-events-none select-none flex flex-col items-end ${className}`}
+      className={`fixed top-14 right-3 sm:right-6 z-40 pointer-events-none select-none flex flex-col items-end ${className}`}
       aria-label="Altitude Telemetry"
     >
       {/* Current Altitude Box */}
-      <div className="bg-[#090d16]/85 backdrop-blur-md border border-white/10 rounded-lg p-3 shadow-xl flex flex-col items-end">
-        <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-widest text-slate-400">
+      <div className="bg-[#090d16]/85 backdrop-blur-md border border-white/10 rounded-lg p-2.5 shadow-xl flex flex-col items-end">
+        <div className="flex items-center gap-1.5 text-[9px] font-mono uppercase tracking-widest text-slate-400">
           <span>Target Elevation</span>
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping" />
         </div>
 
-        <div className="text-xl sm:text-2xl font-mono font-extrabold text-cyan-300 tabular-nums">
+        <div className="text-lg sm:text-xl font-mono font-extrabold text-cyan-300 tabular-nums">
           {formattedAlt}
         </div>
 
         {/* Atmospheric Layer Tag */}
-        <div className="mt-1.5 pt-1.5 border-t border-white/5 text-right">
+        <div className="mt-1 pt-1 border-t border-white/5 text-right">
           <div
-            className="text-[10px] font-mono font-semibold uppercase tracking-wider"
+            className="text-[9px] font-mono font-semibold uppercase tracking-wider"
             style={{ color: layer.color }}
           >
             {layer.name}
           </div>
-          <div className="hidden sm:block text-[9px] text-slate-400 font-sans max-w-[200px] leading-tight mt-0.5">
+          <div className="hidden sm:block text-[8px] text-slate-400 font-sans max-w-[170px] leading-tight mt-0.5">
             {layer.desc}
           </div>
         </div>

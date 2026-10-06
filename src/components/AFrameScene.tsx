@@ -94,14 +94,14 @@ export const AFrameScene: React.FC<AFrameSceneProps> = ({
 
       if (viewMode === 'comparative') {
         // Fit both human (at x=-2) and object (at x=3) in orthographic-style framing
-        // Center vertical camera at h/2, distance proportional to height
-        const targetY = Math.max(1.8, h * 0.48);
-        const targetZ = Math.max(5.5, h * 1.35);
+        // Center vertical camera at h/2, distance adjusted for 75% scale framing
+        const targetY = Math.max(1.5, h * 0.46);
+        const targetZ = Math.max(6.5, h * 1.55);
         cam.setAttribute('position', `0.5 ${targetY} ${targetZ}`);
       } else {
         // 1:1 Climb mode: camera elevates as user scrolls through the structure
-        const targetY = 1.2 + scrollRatio * Math.max(h * 0.9, 2);
-        const targetZ = Math.max(4.5, Math.min(18, h * 0.35));
+        const targetY = 1.0 + scrollRatio * Math.max(h * 0.9, 2);
+        const targetZ = Math.max(5.5, Math.min(22, h * 0.42));
         cam.setAttribute('position', `0.5 ${targetY} ${targetZ}`);
       }
     }

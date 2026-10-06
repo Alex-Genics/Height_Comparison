@@ -22,7 +22,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   const formattedHumanHeight = formatHeight(HUMAN_HEIGHT_METERS, unit);
 
   return (
-    <section className="relative w-full min-h-screen flex flex-col justify-between items-center px-6 pt-28 pb-12 overflow-hidden bg-[#06080d]">
+    <section className="relative w-full min-h-screen flex flex-col justify-between items-center px-4 pt-20 pb-8 overflow-hidden bg-[#06080d]">
       {/* Optional atmospheric backdrop image */}
       {backdropUrl && (
         <div
@@ -32,45 +32,45 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
       )}
 
       {/* Atmospheric radial glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[520px] h-[520px] bg-cyan-600/10 rounded-full blur-[110px] pointer-events-none" />
 
       {/* Hero Typography */}
-      <div className="relative z-10 max-w-4xl text-center space-y-4 pt-8">
-        <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-[0.25em] text-cyan-400/90">
-          <span className="w-2 h-[1px] bg-cyan-400" />
+      <div className="relative z-10 max-w-3xl text-center space-y-3 pt-4">
+        <div className="inline-flex items-center gap-1.5 text-[11px] font-mono uppercase tracking-[0.25em] text-cyan-400/90">
+          <span className="w-1.5 h-[1px] bg-cyan-400" />
           Vertical Scale Exploration
-          <span className="w-2 h-[1px] bg-cyan-400" />
+          <span className="w-1.5 h-[1px] bg-cyan-400" />
         </div>
 
-        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-extrabold tracking-tight text-white leading-[1.05] text-balance">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.05] text-balance">
           HOW TALL IS TALL?
         </h1>
 
-        <p className="text-lg sm:text-xl md:text-2xl text-slate-300 font-light tracking-wide max-w-2xl mx-auto text-balance">
+        <p className="text-base sm:text-lg md:text-xl text-slate-300 font-light tracking-wide max-w-xl mx-auto text-balance">
           One human. A world of extraordinary scale.
         </p>
 
-        <p className="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto leading-relaxed pt-2">
+        <p className="text-xs text-slate-400 max-w-lg mx-auto leading-relaxed pt-1">
           From the basketball hoop above your head to ancient pyramids, megatall skyscrapers, Earth’s highest mountain peaks, and the cosmic boundary of space.
         </p>
       </div>
 
-      {/* The Central Human Silhouette Anchor Preview */}
-      <div className="relative z-10 flex flex-col items-center my-6 group">
+      {/* The Central Human Silhouette Anchor Preview scaled to 75% */}
+      <div className="relative z-10 flex flex-col items-center my-4 group">
         {/* Vertical measurement guide line */}
         <div className="relative flex flex-col items-center">
-          <span className="text-[11px] font-mono text-cyan-400/90 mb-1 tracking-wider">
+          <span className="text-[10px] font-mono text-cyan-400/90 mb-0.5 tracking-wider">
             {formattedHumanHeight}
           </span>
-          <div className="w-24 h-[1px] bg-cyan-500/50" />
+          <div className="w-18 h-[1px] bg-cyan-500/50" />
 
-          {/* Canonical 1.70m silhouette */}
-          <div className="relative py-2">
+          {/* Canonical 1.70m silhouette scaled to 82px (vs 110px) */}
+          <div className="relative py-1.5">
             <svg
-              width="44"
-              height="110"
+              width="33"
+              height="82"
               viewBox="0 0 100 240"
-              className="text-white filter drop-shadow-[0_0_12px_rgba(255,255,255,0.3)] transition-transform duration-300 group-hover:scale-105"
+              className="text-white filter drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] transition-transform duration-300 group-hover:scale-105"
               fill="currentColor"
             >
               <path d="M 50 18 C 58 18 64 24 64 33 C 64 42 58 48 50 48 C 42 48 36 42 36 33 C 36 24 42 18 50 18 Z
@@ -78,25 +78,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             </svg>
           </div>
 
-          <div className="w-32 h-[2px] bg-cyan-400 shadow-[0_0_8px_rgba(56,189,248,0.8)]" />
-          <span className="text-[10px] font-mono tracking-widest text-slate-400 mt-1 uppercase">
+          <div className="w-24 h-[1.5px] bg-cyan-400 shadow-[0_0_6px_rgba(56,189,248,0.8)]" />
+          <span className="text-[9px] font-mono tracking-widest text-slate-400 mt-1 uppercase">
             Human Baseline Datum
           </span>
         </div>
       </div>
 
       {/* CTA Button */}
-      <div className="relative z-10 flex flex-col items-center gap-3">
+      <div className="relative z-10 flex flex-col items-center gap-2.5">
         <button
           onClick={onStartExploring}
-          className="group flex items-center gap-3 px-8 py-4 bg-white text-[#06080d] hover:bg-cyan-300 text-sm font-mono font-bold tracking-wider rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(56,189,248,0.4)] cursor-pointer"
+          className="group flex items-center gap-2.5 px-6 py-3 bg-white text-[#06080d] hover:bg-cyan-300 text-xs font-mono font-bold tracking-wider rounded-lg transition-all duration-300 shadow-[0_0_18px_rgba(255,255,255,0.15)] hover:shadow-[0_0_25px_rgba(56,189,248,0.4)] cursor-pointer"
         >
           <span>START EXPLORING</span>
-          <ArrowDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" />
+          <ArrowDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-y-1" />
         </button>
 
-        <span className="text-[11px] font-mono text-slate-400 flex items-center gap-1.5 animate-bounce">
-          <ChevronDown className="w-3.5 h-3.5 text-cyan-400" />
+        <span className="text-[10px] font-mono text-slate-400 flex items-center gap-1.5 animate-bounce">
+          <ChevronDown className="w-3 h-3 text-cyan-400" />
           Scroll to ascend through scale
         </span>
       </div>

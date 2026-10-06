@@ -7,6 +7,10 @@
     --font-mono: 'JetBrains Mono', monospace;
   }
 
+  html {
+    font-size: 12px; /* Proportional 75% scale baseline (12px / 16px = 0.75) */
+  }
+
   body {
     font-family: var(--font-sans);
     background-color: #06080d;
