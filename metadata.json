@@ -1,0 +1,6 @@
+{
+  "name": "HEIGHTS — Human Scale & Extraordinary Heights",
+  "description": "An interactive, scroll-driven height comparison experience visualizing human scale against famous structures, natural formations, and extraordinary heights.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
